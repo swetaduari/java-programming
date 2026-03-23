@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ID and Class Selectors</title>
+
+  <!-- 
+    THEORY:
+
+    Difference between ID and Class in CSS:
+
+    ID:
+    - Defined using # (hash symbol).
+    - Used for a unique element.
+    - Each id should be used only once in a webpage.
+
+    Class:
+    - Defined using . (dot symbol).
+    - Can be used for multiple elements.
+    - Reusable across the webpage.
+
+    Usage Scenarios:
+    - ID is used when you want to style a single, unique element.
+    - Class is used when you want to apply the same style to multiple elements.
+
+    Lab Exercise:
+    1. Create a webpage where:
+       - An id is applied to an element and styled uniquely.
+       - A class is used to apply the same style to multiple elements.
+  -->
+
+  <style>
+    /* ID Selector (unique) */
+    #unique {
+      color: red;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    /* Class Selector (reusable) */
+    .common {
+      color: blue;
+      background-color: lightgray;
+      padding: 10px;
+      margin: 5px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <h1>CSS ID and Class Selectors</h1>
+
+  <!-- ID Example -->
+  <p id="unique">
+    This paragraph uses ID selector (unique style).
+  </p>
+
+  <!-- Class Examples -->
+  <p class="common">This is first paragraph using class.</p>
+  <p class="common">This is second paragraph using class.</p>
+  <p class="common">This is third paragraph using class.</p>
+
+</body>
+</html>

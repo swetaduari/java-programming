@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--An HTML form is used to collect user input. The user input is most often sent to a server for processing.
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+
+    <link href="style.css" rel="stylesheet">
+    
+</head>
+<body>
+
+    <form method="post">
+        <h2><u>GET IN TOUCH WITH US</u></h2><br>
+       
+        <lable for="number">phone number:</lable><!--label for number-->
+        <input type="tel" placeholder="1234567890" id="number"><br><!--input taken from user for telephone number-->
+        <br>
+        <label for="number">age:</label>
+        <input type="number" id="nomber"><br>
+        <br>
+        <label for="dob">date of birth:</label>
+        <input type="date" id="dob"><br>
+        <br>
+
+
+
+        <label for="gender">gender:</label>
+        <label for="male">male</label>
+        <input type="radio" id="male" name="gender" required>
+
+        <label for="female">female</label>
+        <input type="radio" id="female" name="gender" required><br>
+        <br>
+
+        <label for="city">city:</label>
+        <select id="city"name="city">
+            <option value="rajkot">rajkot</option>
+            <option value="surat">surat</option>
+            <option value="kankot">kankot</option>
+        </select><br>
+        <br>
+        <textarea name="feedback"name="feedback"placeholder="type something"></textarea>
+        <br>
+        <input type="submit" value="submit"><br>
+        <br>
+        <button>click me</button>
+    </form>
+    </body>
+    </html>
+
+  
+        
+
+    </form>
+    
+</body>
+</html>

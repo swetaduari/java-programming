@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sabji bazar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+        }
+        nav {
+            background-color: #40062f;
+            color: white;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        nav a {
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        nav a:hover {
+            background-color: #3d0439;
+        }
+        .container {
+            padding: 80px 20px 20px; /* Offset for the fixed nav */
+            max-width: 900px;
+            margin: auto;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        form {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            max-width: 500px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="text"], input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box; /* Ensures padding doesn't affect width */
+        }
+        button {
+            background-color: #55072e;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #390313;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #5c0731;
+            color: white;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+        ul, ol {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Menu with Anchor Tags -->
+    <nav>
+        <a href="#lists">list</a>
+        <a href="#images">Images</a>
+        <a href="#form">Form</a>
+        <a href="#table">Table</a>
+    </nav>
+
+    <div class="container">
+
+        <h1>Sabji Bazar</h1>
+
+        <!-- Ordered and Unordered Lists Section -->
+        <section id="lists">
+            <h2>Lists of Items</h2>
+            <h3>Unordered List </h3>
+            <ul>
+                <li>Apple</li>
+                <li>Banana</li>
+                <li>Watermelon</li>
+                <li>Gauva</li>
+                <li>Chiku</li>
+            </ul>
+
+            <h3>Ordered List </h3>
+            <ol>
+                <li>Tomato</li>
+                <li>Potato</li>
+                <li>Cauliflower</li>
+                <li>Carrot</li>
+            </ol>
+        </section>
+
+        <!-- Images Section -->
+        <section id="images">
+           
+            <div>
+                 <h2>Fruits</h2>
+                <img src="istockphoto-995518546-612x612.jpg" alt="Fruits">
+                 <h2>Vegetables</h2>
+                <img src="D:\tops\frontend\assignment\html\lab exercise\istockphoto-1203599923-612x612.jpg" alt="Vegetable">
+            </div>
+        </section>
+
+        <!-- Form Section -->
+        <section id="form">
+            <h2>Customer Form</h2>
+            <form action="#" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="type of cutomer">Feedback:</label>
+                <input type="text" id="role" name="role">
+
+                <button type="submit">Submit Data</button>
+            </form>
+        </section>
+
+        <!-- Table Section -->
+        <section id="table">
+            <h2>list of items</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>number</th>
+                        <th>items</th>
+                        <th>price pr kg</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Chiku</td>
+                        <td>100</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Carrot</td>
+                        <td>200</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>cabbage</td>
+                        <td>30</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </div>
+
+</body>
+</html>

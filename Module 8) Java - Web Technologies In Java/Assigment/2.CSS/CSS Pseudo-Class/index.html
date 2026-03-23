@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSS Pseudo-Classes Example</title>
+
+  <!-- 
+    THEORY:
+
+    Introduction to CSS Pseudo-Classes:
+    Pseudo-classes are used to define the special state of an element.
+    They allow you to style elements based on user interaction or position.
+
+    Common Pseudo-Classes:
+    :hover  → Applies when the user moves the mouse over an element.
+    :focus  → Applies when an input field is selected (clicked or active).
+    :active → Applies when an element is being clicked.
+
+    Use:
+    Pseudo-classes help make web pages interactive and improve user experience
+    by changing styles dynamically based on user actions.
+
+    Lab Exercise:
+    1. Create a navigation menu and:
+       - Change link color on hover.
+       - Style form inputs when focused.
+  -->
+
+  <style>
+    /* Navigation Menu Styling */
+    ul {
+      list-style-type: none;
+      background-color: black;
+      padding: 10px;
+    }
+
+    li {
+      display: inline;
+      margin-right: 20px;
+    }
+
+    a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    /* Pseudo-class: hover */
+    a:hover {
+      color: yellow;
+    }
+
+    /* Pseudo-class: active */
+    a:active {
+      color: red;
+    }
+
+    /* Form Styling */
+    input {
+      padding: 10px;
+      margin: 10px;
+      border: 2px solid gray;
+    }
+
+    /* Pseudo-class: focus */
+    input:focus {
+      border-color: blue;
+      background-color: lightyellow;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <h1>CSS Pseudo-Classes Demo</h1>
+
+  <!-- Navigation Menu -->
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+
+  <!-- Form -->
+  <h2>Login Form</h2>
+  <form>
+    <input type="text" placeholder="Enter Name"><br>
+    <input type="password" placeholder="Enter Password">
+  </form>
+
+</body>
+</html>

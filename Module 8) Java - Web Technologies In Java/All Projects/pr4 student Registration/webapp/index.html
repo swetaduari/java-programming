@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Student Portal</title>
+    <!-- Professional, clean font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            /* Slate 900 */
+            --card-bg: rgba(30, 41, 59, 0.7);
+            /* Slate 800 */
+            --primary: #3b82f6;
+            /* Blue 500 */
+            --primary-hover: #2563eb;
+            /* Blue 600 */
+            --text-main: #f8fafc;
+            /* Slate 50 */
+            --text-muted: #94a3b8;
+            /* Slate 400 */
+            --input-bg: rgba(15, 23, 42, 0.6);
+            --border: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: var(--bg-color);
+            background-image:
+                radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(139, 92, 246, 0.15) 0px, transparent 50%);
+            overflow: hidden;
+            color: var(--text-main);
+        }
+
+        .login-container {
+            position: relative;
+            width: 420px;
+            padding: 40px 40px 50px;
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            margin-top: 60px;
+            /* Space for the avatar */
+        }
+
+        h2 {
+            font-size: 26px;
+            font-weight: 500;
+            margin-top: 30px;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        p.subtitle {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-bottom: 35px;
+            font-weight: 300;
+        }
+
+        /* ----- Mature Student Animation Elements ----- */
+        .avatar-container {
+            position: absolute;
+            top: -80px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 120px;
+            z-index: 10;
+        }
+
+        .head {
+            width: 100px;
+            height: 100px;
+            background: #e2e8f0;
+            /* Subdued subtle skin tone */
+            border-radius: 45px 45px 35px 35px;
+            position: absolute;
+            bottom: 0;
+            left: 10px;
+            border: 3px solid var(--bg-color);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .hair {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 38px;
+            background: #1e293b;
+            /* Dark slate hair */
+            border-bottom: 2px solid rgba(0, 0, 0, 0.15);
+        }
+
+        /* Modern Rectangular Glasses */
+        .glasses {
+            position: absolute;
+            top: 42px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 2;
+        }
+
+        .lens {
+            width: 32px;
+            height: 28px;
+            border: 3px solid #334155;
+            border-radius: 6px;
+            /* Sleeker, less round */
+            position: relative;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(1px);
+        }
+
+        .bridge {
+            width: 16px;
+            height: 3px;
+            background: #334155;
+            position: absolute;
+            left: 29px;
+            top: 12px;
+            z-index: -1;
+        }
+
+        .eye {
+            width: 6px;
+            height: 6px;
+            background: #0f172a;
+            border-radius: 50%;
+            position: absolute;
+            top: 8px;
+            left: 10px;
+            transition: transform 0.1s ease-out;
+        }
+
+        .mouth {
+            position: absolute;
+            bottom: 18px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 16px;
+            height: 3px;
+            background: #94a3b8;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        /* Sleek Hands */
+        .hand {
+            position: absolute;
+            bottom: -50px;
+            width: 34px;
+            height: 42px;
+            background: #cbd5e1;
+            border-radius: 17px;
+            border: 3px solid var(--bg-color);
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.3, 1.1);
+            z-index: 20;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            /* Hidden by default */
+        }
+
+        .hand.left {
+            left: 15px;
+        }
+
+        .hand.right {
+            right: 15px;
+        }
+
+        /* Animation States for Password */
+        .hide-eyes .hand {
+            opacity: 1;
+        }
+
+        .hide-eyes .hand.left {
+            bottom: 32px;
+            left: 20px;
+            transform: rotate(20deg);
+        }
+
+        .hide-eyes .hand.right {
+            bottom: 32px;
+            right: 20px;
+            transform: rotate(-20deg);
+        }
+
+        .hide-eyes .mouth {
+            width: 12px;
+            background: #cbd5e1;
+        }
+
+        /* Form Controls */
+        .form-group {
+            position: relative;
+            margin-bottom: 24px;
+            text-align: left;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 18px 20px;
+            background: var(--input-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            font-size: 15px;
+            color: var(--text-main);
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        .form-group input::placeholder {
+            color: transparent;
+            /* Used for smooth floating labels */
+        }
+
+        .form-group label {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-size: 15px;
+            pointer-events: none;
+            transition: all 0.2s ease;
+            padding: 0 6px;
+        }
+
+        /* Floating label mechanics */
+        .form-group input:focus,
+        .form-group input:not(:placeholder-shown) {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+        }
+
+        .form-group input:focus+label,
+        .form-group input:not(:placeholder-shown)+label {
+            top: 0;
+            font-size: 13px;
+            color: var(--primary);
+            background: var(--card-bg);
+            border-radius: 4px;
+        }
+
+        .btn-login {
+            width: 100%;
+            padding: 16px;
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-top: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-login:hover {
+            background: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+        }
+
+        .btn-login:active {
+            transform: translateY(0);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 24px;
+            font-size: 14px;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--text-main);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login-container">
+        <!-- Minimalist Mature Student Avatar -->
+        <div class="avatar-container" id="avatar">
+            <div class="head">
+                <div class="hair"></div>
+                <div class="glasses">
+                    <div class="lens">
+                        <div class="eye" id="eye-left"></div>
+                    </div>
+                    <div class="bridge"></div>
+                    <div class="lens">
+                        <div class="eye" id="eye-right"></div>
+                    </div>
+                </div>
+                <div class="mouth"></div>
+            </div>
+            <div class="hand left"></div>
+            <div class="hand right"></div>
+        </div>
+
+        <h2>Sign In</h2>
+        <p class="subtitle">Access your student dashboard</p>
+
+        <!-- Java Endpoint Ready Form -->
+        <form action="Login" method="POST">
+            <div class="form-group">
+                <input type="text" id="username" name="email" required autocomplete="off">
+                   <label for="username">Student ID / Email</label>
+            </div>
+
+            <div class="form-group">
+                <input type="password" id="password" name="password" placeholder="Password" required>
+                <label for="password">Password</label>
+            </div>
+
+            <button type="submit" class="btn-login">Secure Login</button>
+
+            <div class="footer-links">
+                <a href="#">Forgot Credentials?</a>
+                <a href="#">IT Support</a>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        const usernameInput = document.getElementById('username');
+        const passwordInput = document.getElementById('password');
+        const avatar = document.getElementById('avatar');
+        const eyeLeft = document.getElementById('eye-left');
+        const eyeRight = document.getElementById('eye-right');
+
+        // Track username typing length to move eyes smoothly
+        usernameInput.addEventListener('focus', () => {
+            avatar.classList.remove('hide-eyes');
+        });
+
+        usernameInput.addEventListener('input', (e) => {
+           // const valLen = e.target.value.length;
+           // const maxMovement = 12; // Max horizontal movement inside lens
+            //const movement = Math.min((valLen * 1.5), maxMovement);
+
+            eyeLeft.style.transform = `translateX(${movement}px)`;
+            eyeRight.style.transform = `translateX(${movement}px)`;
+        });
+
+        usernameInput.addEventListener('blur', () => {
+            eyeLeft.style.transform = `translate(0px, 0px)`;
+            eyeRight.style.transform = `translate(0px, 0px)`;
+        });
+
+        // Hands come up to cover eyes when typing password
+        passwordInput.addEventListener('focus', () => {
+            avatar.classList.add('hide-eyes');
+            eyeLeft.style.transform = `translate(0px, 0px)`;
+            eyeRight.style.transform = `translate(0px, 0px)`;
+        });
+
+        passwordInput.addEventListener('blur', () => {
+            avatar.classList.remove('hide-eyes');
+        });
+    </script>
+
+</body>
+
+</html>

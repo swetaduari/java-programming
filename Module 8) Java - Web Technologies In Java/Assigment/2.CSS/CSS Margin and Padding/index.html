@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Margin and Padding Example</title>
+
+  <!-- 
+    THEORY:
+
+    Definition:
+    Margin is the space outside an element. It creates distance between elements.
+    Padding is the space inside an element, between the content and its border.
+
+    Difference between Margin and Padding:
+    - Margin controls outer space (outside the border).
+    - Padding controls inner space (inside the border).
+
+    Explanation:
+    Margins create space outside the element, separating it from other elements.
+    Padding creates space inside the element, making the content appear spaced from the border.
+
+    Lab Exercise:
+    1. Create a webpage where:
+       - Margin is applied to an element.
+       - Padding is applied to a div.
+       - Show different margin and padding values to see layout changes.
+  -->
+
+  <style>
+    /* Box with margin */
+    .margin-box {
+      background-color: lightblue;
+      margin: 30px; /* space outside */
+      padding: 10px;
+    }
+
+    /* Box with padding */
+    .padding-box {
+      background-color: lightgreen;
+      padding: 40px; /* space inside */
+      margin: 20px;
+    }
+
+    /* Box with different margin and padding values */
+    .mixed-box {
+      background-color: lightcoral;
+      margin: 10px 50px; /* top-bottom: 10px, left-right: 50px */
+      padding: 20px 5px; /* top-bottom: 20px, left-right: 5px */
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <h1>Margin and Padding Demonstration</h1>
+
+  <!-- Margin Example -->
+  <div class="margin-box">
+    This box has margin applied (space outside).
+  </div>
+
+  <!-- Padding Example -->
+  <div class="padding-box">
+    This box has padding applied (space inside).
+  </div>
+
+  <!-- Different Values Example -->
+  <div class="mixed-box">
+    This box shows different margin and padding values.
+  </div>
+
+</body>
+</html>
